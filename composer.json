@@ -1,0 +1,51 @@
+{
+    "name": "themehybrid/hybrid-cache",
+    "description": "Cache package for the Hybrid Core framework.",
+    "license": "GPL-2.0-or-later",
+    "keywords": [
+        "wordpress"
+    ],
+    "authors": [
+        {
+            "name": "Theme Hybrid",
+            "email": "themehybrid@gmail.com",
+            "homepage": "https://themehybrid.com",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/themehybrid/hybrid-cache",
+    "support": {
+        "issues": "https://github.com/themehybrid/hybrid-cache/issues"
+    },
+    "require": {
+        "php": ">=8.2",
+        "themehybrid/hybrid-contracts": "dev-next as 2.0",
+        "themehybrid/hybrid-pipeline": "dev-next as 1.0",
+        "themehybrid/hybrid-tools": "dev-next as 2.0"
+    },
+    "provide": {
+        "psr/simple-cache-implementation": "1.0 || 2.0 || 3.0"
+    },
+    "suggest": {
+        "ext-apcu": "Required to use the APC cache driver.",
+        "ext-filter": "Required to use the DynamoDb cache driver.",
+        "ext-memcached": "Required to use the memcached cache driver.",
+        "symfony/cache": "Required to use PSR-6 cache bridge (^7.2).",
+        "themehybrid/hybrid-database": "Required to use the database cache driver (^1.0).",
+        "themehybrid/hybrid-filesystem": "Required to use the file cache driver (^1.0).",
+        "themehybrid/hybrid-redis": "Required to use the redis cache driver (^1.0)."
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Hybrid\\Cache\\": "src/"
+        },
+        "files": [
+            "src/functions-helpers.php"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
